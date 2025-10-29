@@ -1,0 +1,40 @@
+
+        {% extends "Home.html" %}
+{% load static %}
+
+{% block title %}Courses Page{% endblock %}
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'course/css/Home.css' %}">
+{% endblock %}
+
+{% block landing %}{% endblock landing %}
+
+{% block content %}
+
+<div class="course-header">
+    <h1 class="page-title">🎓 Available Courses</h1>
+    <a href="{% url 'add_course' %}" class="add-btn btn">+ Add New Course</a>
+</div>
+
+<div class="courses-container">
+    {% for c in courses_jinja %}
+        <div class="course-card">
+            <h2>{{ c.name }}</h2>
+            <p>{{ c.description }}</p>
+           <br>
+           <hr>
+           <br>
+            <div class="actions">
+                  <a href="{% url 'update_course' c.id %}" > <button class="btn btn-edit"> Update </button></a>
+                  <a href="{% url 'delete_course' c.id %}" > <button class="btn btn-delete" >Delete </button></a>
+              </div>
+        </div>
+    {% empty %}
+        <p class="no-courses">No courses available yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
+
+        {% block about %}{% endblock about %}

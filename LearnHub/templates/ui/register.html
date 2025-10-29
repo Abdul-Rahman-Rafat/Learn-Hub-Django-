@@ -1,0 +1,12 @@
+
+{% extends 'Home.html' %}
+{% block content %}
+{% block landing %}{% endblock landing %}
+{% block about %}{% endblock about %}
+
+<h3>Register</h3>
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn " type="submit">Register</button>
+</form>
+{% endblock %}

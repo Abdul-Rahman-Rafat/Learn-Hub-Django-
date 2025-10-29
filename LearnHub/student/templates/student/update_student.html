@@ -1,0 +1,20 @@
+{% extends "Home.html" %}
+
+{% block landing %}{% endblock landing %}
+
+{% block content %}
+<h1>Update Student</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="save-btn" type="submit">Save</button>
+</form>
+<button class="back-btn"> 
+    <a href="{% url 'studHome' %}">    Back   </a>
+</button>
+
+{% endblock %}
+
+
+ {% block about %}
+        {% endblock about %}

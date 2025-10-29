@@ -1,0 +1,17 @@
+{% extends "Home.html" %}
+{% load static %}
+
+{% block landing %}{% endblock landing %}
+
+{% block content %}
+<h2 class="add_new">Add New Student</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="save-btn" type="submit">Save</button>
+</form>
+
+{% endblock %}
+{% block about %}
+            {% endblock about %}

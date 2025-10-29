@@ -1,0 +1,58 @@
+{% extends "Home.html" %}
+{% load static %}
+
+    <title>{% block title %}Student Page{% endblock %}</title>
+    
+        <link  rel="stylesheet" href={% static "student/css/home.css" %}>
+
+
+        {% block landing %}{% endblock landing %}
+
+ {% block content %}
+
+
+<div class="course-header">
+    <h1 class="page-title">👨‍🎓 Students</h1>
+    <a href="{% url 'add_student' %}" class="add-btn btn">+ Add Student</a>
+</div>
+
+
+       
+
+        {% endblock content %}
+
+        
+        {% block content2 %}
+        <section class="students_section">
+        {% for s in  students_jinja %}
+
+        <div class="student_card"> 
+            <a href="{% url 'view_student' s.id %}">
+
+                <h2>{{ s.name }}</h2>
+            </a>
+
+    {% if s.image %}
+    <img src="{{ s.image.url }}" alt="{{ s.name }}" width="180" height="180">
+    {% else %}
+        <p>No image uploaded</p>
+    {% endif %}
+
+            <div class="actions">
+                <a href="{% url 'update_student' s.id %}" > <button class="btn btn-edit"> Update </button></a>
+                <a href="{% url 'delete_student' s.id %}" > <button class="btn btn-delete" >Delete </button></a>
+            </div>
+  
+</div>
+
+
+
+        {% endfor %}
+        </div>
+
+        
+    </section>
+        {% endblock content2 %}
+
+
+        {% block about %}{% endblock about %}

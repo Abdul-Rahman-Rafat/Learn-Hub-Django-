@@ -1,0 +1,19 @@
+
+{% extends 'Home.html' %}
+{% block content %}
+
+{% block landing %}{% endblock landing %}
+{% block about %}{% endblock about %}
+<h3>Login</h3>
+<form method="post">{% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input name="username" class="form-control"/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input name="password" type="password" class="form-control"/>
+  </div>
+  <button class="btn btn-login" type="submit">Login</button>
+</form>
+{% endblock %}
