@@ -18,6 +18,7 @@ body {
 
 }
 
+/* nav-links in middle of nav */
 
 nav {
     display: flex;
@@ -33,6 +34,8 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    
+    
 
 
 }
@@ -48,6 +51,19 @@ nav {
     letter-spacing: 1px;
 
 }
+/* nav-links in middle of nav */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-grow: 1;
+
+}
+.log-reg{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
 
 nav a {
     color: #fff;
@@ -71,7 +87,6 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 .btn-login{
-     background-color: green;
     color: #fff;
     padding: 8px 16px;
     border-radius: 8px;
@@ -79,8 +94,7 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 .btn-register{
-     background-color: rgb(145, 145, 11);
-    color: #fff;
+    color: rgb(202, 202, 23);
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 600;
@@ -275,6 +289,7 @@ form button {
 @media (max-width: 600px) {
     nav {
         font-size: 16px;
+        
     }
 
     .student_card, .course-card {
@@ -284,6 +299,8 @@ form button {
     h1 {
         font-size: 22px;
     }
+    
+   
 }
 
 .course-header{
@@ -423,7 +440,7 @@ form button {
 
 .info-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 30px 20px;
 }
 
 .info-section h2 {

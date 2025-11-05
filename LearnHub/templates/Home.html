@@ -15,16 +15,20 @@
                     <a id="logolink" href="{% url 'home' %}">LearnHub</a>
 
         </div>
+        <div class="nav-links">
 
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'studHome' %}">Students</a>
         <a href="{% url 'courseHome' %}">Courses</a>
+        </div>
+        <div class="log-reg">
               {% if user.is_authenticated %}
+              <p> Hello, {{ user.username }}!</p>
       <a href="{% url 'logout' %}" class="btn-logout">Logout</a>
       {% else %}
       <a href="{% url 'login' %}" class="btn-login">Login</a>
     <a class="btn-register  " href="{% url 'register' %}">Register</a> 
-
+</div>
 
       {% endif %}
     </nav>
@@ -32,7 +36,7 @@
     <header class="hero-section">
         <div class="overlay">
             <h1> Welcome to LearnHub</h1>
-            <p>Manage your students, track their progress, and organize courses easily using this Django-based system.</p>
+            <p>Manage your students, track their progress, and organize courses easily .</p>
 
             <div class="hero-buttons">
                 <a href="{% url 'studHome' %}" class="btn btn-primary">View Students</a>
@@ -51,21 +55,18 @@
 
         {% block about %}
         <h2>About </h2>
-        <p>This web application allows you to manage students and courses with an easy-to-use interface built using Django.</p>
+        <p>Manage students and courses with an easy-to-use interface .</p>
 
         <div class="features">
             <div class="feature-card">
-                <h3>👨‍🎓 Manage Students</h3>
+                <h3> Manage Students</h3>
                 <p>Add, update, and delete students easily, including their photos and study years.</p>
             </div>
             <div class="feature-card">
-                <h3>📚 Handle Courses</h3>
+                <h3> Handle Courses</h3>
                 <p>Create and organize courses, assign students to each course dynamically.</p>
             </div>
-            <div class="feature-card">
-                <h3>⚙️ Admin Panel</h3>
-                <p>Use Django's admin dashboard to control your entire database with a few clicks.</p>
-            </div>
+           
         </div>
         {% endblock %}
     </main>
